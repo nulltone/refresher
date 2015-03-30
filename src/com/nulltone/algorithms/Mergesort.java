@@ -2,7 +2,12 @@ package com.nulltone.algorithms;
 
 import java.util.Arrays;
 
+/**
+ * Mergesort using top-down approach.
+ */
 public class Mergesort {
+
+
   public static void main(String args[]) {
     int[] numbers = new int[10];
     Common.randomizeArray(numbers);
@@ -11,6 +16,7 @@ public class Mergesort {
     int[] sortedNumbers = mergesort(numbers);
     System.out.printf(" Sorted numbers: %s\n", Arrays.toString(sortedNumbers));
   }
+
 
   public static int[] mergesort(int[] nums) {
     // Single element is considered sorted.
@@ -24,13 +30,13 @@ public class Mergesort {
     int[] right = new int[right_half];
 
     // Fill the left half.
-    for (int li = 0; li < left_half; li++) {
-      left[li] = nums[li];
+    for (int i = 0; i < left_half; i++) {
+      left[i] = nums[i];
     }
 
     // Fill the right half.
-    for (int ri = 0; ri < right_half; ri++) {
-      right[ri] = nums[left_half + ri];
+    for (int i = 0; i < right_half; i++) {
+      right[i] = nums[left_half + i];
     }
 
     // Keep splitting recursively.
@@ -40,6 +46,7 @@ public class Mergesort {
     // Merge the left and right halves.
     return merge(left, right);
   }
+
 
   public static int[] merge(int[] left, int[] right) {
     int leftIndex = 0;
@@ -65,4 +72,6 @@ public class Mergesort {
     // Return the new and sorted array.
     return newArray;
   }
+
+
 }
