@@ -1,22 +1,9 @@
 package com.nulltone.algorithms;
 
-import java.util.Arrays;
-
 /**
  * Mergesort using top-down approach.
  */
 public class Mergesort {
-
-
-  public static void main(String args[]) {
-    int[] numbers = new int[10];
-    Common.randomizeArray(numbers);
-    System.out.printf("Initial numbers: %s\n", Arrays.toString(numbers));
-
-    int[] sortedNumbers = mergesort(numbers);
-    System.out.printf(" Sorted numbers: %s\n", Arrays.toString(sortedNumbers));
-  }
-
 
   public static int[] mergesort(int[] nums) {
     // Single element is considered sorted.

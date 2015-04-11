@@ -1,18 +1,6 @@
 package com.nulltone.algorithms;
 
-import java.util.Arrays;
-
 public class Quicksort {
-
-  public static void main(String[] args) {
-    int[] numbers = new int[8];
-    Common.randomizeArray(numbers);
-    System.out.printf("Initial numbers: %s\n", Arrays.toString(numbers));
-
-    quicksort(numbers, 0, numbers.length - 1);
-    System.out.printf(" Sorted numbers: %s\n", Arrays.toString(numbers));
-  }
-
 
   public static void quicksort(int[] nums, int low, int high) {
     if (low < high) {
