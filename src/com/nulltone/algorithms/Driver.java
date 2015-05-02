@@ -59,7 +59,7 @@ public class Driver {
     System.out.println("Running Square Sum...");
 
     int singleNumber[][] = {{7}};
-    print2dArray(singleNumber);
+    Common.print2dArray(singleNumber);
     SubSquareSum singleSquare = new SubSquareSum(singleNumber);
     int sum = singleSquare.calculateSum(0, 0, 0, 0);
 
@@ -73,20 +73,12 @@ public class Driver {
       {6, 25, 50, 38, 29, 25, 5, 53},
       {34, 35, 32, 17, 56, 51, 42, 32},
     };
-    print2dArray(numbers);
+    Common.print2dArray(numbers);
 
     SubSquareSum squareSum = new SubSquareSum(numbers);
     sum = squareSum.calculateSum(0, 0, 0, 0);
     sum = squareSum.calculateSum(0, 0, 6, 6);
     sum = squareSum.calculateSum(0, 0, 7, 7);
     sum = squareSum.calculateSum(2, 2, 4, 4);
-  }
-
-  private static void print2dArray(int numbers[][]) {
-    System.out.printf("[\n");
-    for (int i = 0; i < numbers.length; i++) {
-      System.out.printf("  %s,\n", Arrays.toString(numbers[i]));
-    }
-    System.out.printf("]\n");
   }
 }
