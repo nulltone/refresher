@@ -8,6 +8,7 @@ public class Driver {
     runQuicksort();
     runRadixsort();
     testHeap();
+    testSquareSum();
   }
 
   public static void runQuicksort() {
@@ -52,5 +53,32 @@ public class Driver {
     Radixsort radixsort = new Radixsort(numbers, 10, 3);
     radixsort.sort();
     System.out.printf(" Sorted numbers: %s\n\n", Arrays.toString(numbers));
+  }
+
+  public static void testSquareSum() {
+    System.out.println("Running Square Sum...");
+
+    int singleNumber[][] = {{7}};
+    Common.print2dArray(singleNumber);
+    SubSquareSum singleSquare = new SubSquareSum(singleNumber);
+    int sum = singleSquare.calculateSum(0, 0, 0, 0);
+
+    int numbers[][] = {
+      {49, 33, 53, 21, 62, 46, 54, 44},
+      {38, 48, 4, 27, 25, 51, 62, 48},
+      {47, 38, 21, 46, 21, 25, 12, 31},
+      {62, 11, 59, 35, 7, 0, 20, 44},
+      {18, 62, 1, 32, 62, 8, 50, 20},
+      {34, 44, 49, 61, 56, 43, 7, 28},
+      {6, 25, 50, 38, 29, 25, 5, 53},
+      {34, 35, 32, 17, 56, 51, 42, 32},
+    };
+    Common.print2dArray(numbers);
+
+    SubSquareSum squareSum = new SubSquareSum(numbers);
+    sum = squareSum.calculateSum(0, 0, 0, 0);
+    sum = squareSum.calculateSum(0, 0, 6, 6);
+    sum = squareSum.calculateSum(0, 0, 7, 7);
+    sum = squareSum.calculateSum(2, 2, 4, 4);
   }
 }
