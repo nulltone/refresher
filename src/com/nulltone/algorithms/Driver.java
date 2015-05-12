@@ -9,6 +9,8 @@ public class Driver {
     runRadixsort();
     testHeap();
     testSquareSum();
+    testMaxSubstring();
+    testBinaryTree();
   }
 
   public static void runQuicksort() {
@@ -80,5 +82,36 @@ public class Driver {
     sum = squareSum.calculateSum(0, 0, 6, 6);
     sum = squareSum.calculateSum(0, 0, 7, 7);
     sum = squareSum.calculateSum(2, 2, 4, 4);
+
+    int simpleNumbers[][] = {
+      {1, 1, 1},
+      {1, 1, 1},
+      {1, 1, 1}
+    };
+    Common.print2dArray(simpleNumbers);
+
+    squareSum = new SubSquareSum(simpleNumbers);
+    sum = squareSum.calculateSum(1, 1, 2, 2);
+  }
+
+  public static void testBinaryTree() {
+    System.out.println("Running SameBinaryTree...");
+
+    int[] tree1 = {1, 2, 3, 4, 5, 6, 7 ,8, 9};
+    int[] tree2 = {1, 3, 2, 7, 8, 9, 6, 5, 4};
+
+    //String strIsSame = SameBinaryTree.isSameTree(tree1, tree2) ? "is the same as" : "is NOT the same as";
+    //System.out.printf("%s %s %s\n", Arrays.toString(tree1), strIsSame, Arrays.toString(tree2));
+  }
+
+  public static void testMaxSubstring() {
+    System.out.println("Running MaxSubStringNoDupe...");
+
+    assert(MaxSubStringNoDupe.findMaxSubstring("abcdefghij").equals("abcdefghij"));
+    assert(MaxSubStringNoDupe.findMaxSubstring("abcdefghaij").equals("bcdefghaij"));
+    assert(MaxSubStringNoDupe.findMaxSubstring("abcadefghij").equals("bcadefghij"));
+    assert(MaxSubStringNoDupe.findMaxSubstring("abcadefghiaj").equals("bcadefghi"));
+    assert(MaxSubStringNoDupe.findMaxSubstring("abcadebfghiaj").equals("cadebfghi"));
+    assert(MaxSubStringNoDupe.findMaxSubstring("aaaaaa").equals("a"));
   }
 }
