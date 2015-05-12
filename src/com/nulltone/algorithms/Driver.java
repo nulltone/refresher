@@ -113,5 +113,6 @@ public class Driver {
     assert(MaxSubStringNoDupe.findMaxSubstring("abcadefghiaj").equals("bcadefghi"));
     assert(MaxSubStringNoDupe.findMaxSubstring("abcadebfghiaj").equals("cadebfghi"));
     assert(MaxSubStringNoDupe.findMaxSubstring("aaaaaa").equals("a"));
+    assert(MaxSubStringNoDupe.findMaxSubstring("aaabaaa").equals("ab"));
   }
 }
