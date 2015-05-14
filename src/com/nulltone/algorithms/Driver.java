@@ -1,6 +1,8 @@
 package com.nulltone.algorithms;
 
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Driver {
   public static void main(String[] args) {
@@ -11,6 +13,8 @@ public class Driver {
     testSquareSum();
     testMaxSubstring();
     testBinaryTree();
+    testThreeMaximumSubsequenceProduct();
+    testGroupAnagrams();
   }
 
   public static void runQuicksort() {
@@ -114,5 +118,32 @@ public class Driver {
     assert(MaxSubStringNoDupe.findMaxSubstring("abcadebfghiaj").equals("cadebfghi"));
     assert(MaxSubStringNoDupe.findMaxSubstring("aaaaaa").equals("a"));
     assert(MaxSubStringNoDupe.findMaxSubstring("aaabaaa").equals("ab"));
+  }
+
+  public static void testThreeMaximumSubsequenceProduct() {
+    System.out.println("Running ThreeMaximumSubsequenceProduct...");
+
+    int testData[] = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int expectedResult[] = new int[]{7, 8, 9};
+    assert(Arrays.equals(ThreeMaximumSubsequenceProduct.findThreeMaxSubsequence(testData), expectedResult));
+
+    testData = new int[]{4, 7, 5, 6, 8, 1, 2, 3, 9};
+    expectedResult = new int[]{7, 8, 9};
+    assert(Arrays.equals(ThreeMaximumSubsequenceProduct.findThreeMaxSubsequence(testData), expectedResult));
+
+    testData = new int[]{6, 7, 8, 1, 2, 3, 9, 10};
+    expectedResult = new int[]{8, 9, 10};
+    assert(Arrays.equals(ThreeMaximumSubsequenceProduct.findThreeMaxSubsequence(testData), expectedResult));
+  }
+
+  public static void testGroupAnagrams() {
+    System.out.println("Testing GroupAnagrams...");
+
+    String testData[] = new String[]{"star", "astr", "rats", "car", "rac", "st"};
+    List<List<String>> groupedAnagrams = GroupAnagrams.groupAnagrams(testData);
+    assert(groupedAnagrams.size() == 3);
+    assert(groupedAnagrams.get(0).equals(Arrays.asList("st")));
+    assert(groupedAnagrams.get(1).equals(Arrays.asList("car", "rac")));
+    assert(groupedAnagrams.get(2).equals(Arrays.asList("star", "astr", "rats")));
   }
 }
